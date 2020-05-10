@@ -15,6 +15,7 @@ import com.example.dailyplanner.R;
 import com.example.dailyplanner.child.child_mainView;
 import com.example.dailyplanner.child.list.childItemList;
 import com.example.dailyplanner.child.list.childListAdapter;
+import com.example.dailyplanner.helpers.IP;
 import com.example.dailyplanner.service.events_service;
 import com.google.gson.Gson;
 
@@ -39,6 +40,8 @@ public class custom_view extends AppCompatActivity
 
     TextView dateToday;
 
+
+    IP ip = new IP();
     private static final String DATE_FORMAT = "dd MM yyyy";
 
 
@@ -96,7 +99,7 @@ public class custom_view extends AppCompatActivity
 
         String item = null;
         try {
-            item = new events_service().execute("http://192.168.1.46:3000/getEvents").get();
+            item = new events_service().execute(ip.getAddress()+"/getEvents").get();
         } catch (ExecutionException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {

@@ -20,6 +20,7 @@ import android.widget.TextView;
 
 import com.example.dailyplanner.R;
 import com.example.dailyplanner.child.list.childItemList;
+import com.example.dailyplanner.helpers.IP;
 import com.example.dailyplanner.service.events_service;
 import com.google.gson.Gson;
 
@@ -57,6 +58,8 @@ public class calendar_activity extends LinearLayout {
     private ImageView btnNext;
     private TextView txtDate;
     private GridView grid;
+
+    IP ip = new IP();
 
 
     public calendar_activity(Context context)
@@ -234,7 +237,7 @@ public class calendar_activity extends LinearLayout {
 
             String item = null;
             try {
-                item = new events_service().execute("http://192.168.1.46:3000/getEvents").get();
+                item = new events_service().execute(ip.getAddress()+"/getEvents").get();
             } catch (ExecutionException e) {
                 e.printStackTrace();
             } catch (InterruptedException e) {

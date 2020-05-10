@@ -13,6 +13,7 @@ import com.example.dailyplanner.calendar.custom_view;
 import com.example.dailyplanner.child.list.childItemList;
 import com.example.dailyplanner.child.list.childListAdapter;
 import com.example.dailyplanner.event.event;
+import com.example.dailyplanner.helpers.IP;
 import com.example.dailyplanner.helpers.JavaHelpers;
 import com.example.dailyplanner.service.events_service;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -36,6 +37,8 @@ public class child_mainView extends AppCompatActivity {
 
     events_service eventService;
     ListView mListView;
+
+    IP ip = new IP();
 
     FloatingActionButton goToCreateEvent;
     FloatingActionButton goBackToCalendar;
@@ -88,7 +91,7 @@ public class child_mainView extends AppCompatActivity {
 
         String item = null;
         try {
-            item = new events_service().execute("http://192.168.1.46:3000/getEvents").get();
+            item = new events_service().execute(ip.getAddress()+"/getEvents").get();
         } catch (ExecutionException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {

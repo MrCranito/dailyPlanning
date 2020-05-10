@@ -12,6 +12,7 @@ import com.example.dailyplanner.child.child_mainView;
 import com.example.dailyplanner.child.list.childItemList;
 import com.example.dailyplanner.child.list.childListAdapter;
 import com.example.dailyplanner.event.event;
+import com.example.dailyplanner.helpers.IP;
 import com.example.dailyplanner.service.events_service;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.gson.Gson;
@@ -32,6 +33,8 @@ public class alarm_mainView extends AppCompatActivity {
     ListView alarmListView;
 
     FloatingActionButton addAlarm;
+
+    IP ip = new IP();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +66,7 @@ public class alarm_mainView extends AppCompatActivity {
 
         String item = null;
         try {
-            item = new events_service().execute("http://192.168.1.46:3000/getAlarms").get();
+            item = new events_service().execute(ip.getAddress()+"/getAlarms").get();
         } catch (ExecutionException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
