@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="?android:attr/listPreferredItemHeight"
+    android:padding="6dip" >
+
+    <View
+        android:id="@+id/iconAlarm"
+        android:layout_width="4dp"
+        android:layout_height="58dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="4dp"
+        android:layout_marginRight="6dip"
+        android:background="@color/colorAccent"
+        android:contentDescription="TODO" />
+
+    <View
+        android:id="@+id/startDate"
+        android:layout_width="60dp"
+        android:layout_height="49dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="3dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/icon"
+        android:layout_toRightOf="@+id/icon" />
+
+    <TextView
+        android:id="@+id/descriptionAlarm"
+        android:layout_width="223dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/recurrancyAlarm"
+        android:layout_marginBottom="7dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginStart="6dp"
+        android:layout_toEndOf="@+id/startDate"
+        android:layout_toRightOf="@+id/startDate"
+        android:text="Description"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/recurrancyAlarm"
+        android:layout_width="221dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="9dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginStart="7dp"
+        android:layout_toEndOf="@+id/startDate"
+        android:layout_toRightOf="@+id/startDate"
+        android:text="Description"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/alarmDate"
+        android:layout_width="51dp"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@+id/startDate"
+        android:layout_alignEnd="@+id/startDate"
+        android:layout_alignLeft="@+id/startDate"
+        android:layout_alignRight="@+id/startDate"
+        android:layout_alignStart="@+id/startDate"
+        android:layout_below="@+id/textView2"
+        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="11dp"
+        android:text="TextView"
+        android:textSize="10sp" />
+
+    <Switch
+        android:id="@+id/isActived"
+        android:layout_width="44dp"
+        android:layout_height="29dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="34dp"
+        android:layout_marginLeft="19dp"
+        android:layout_marginRight="34dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="13dp"
+        android:layout_toEndOf="@+id/description"
+        android:layout_toRightOf="@+id/description" />
+
+
+</RelativeLayout>
